@@ -114,5 +114,7 @@ SELECT * FROM fn_top_k_faturamento_total(3);
 ```
 
 ## 📧 Contato
-- **Autores**: Danilo Pinto Nascimento, Isabel  Wesley Ribeiro Felix da Silva, .
+- **Autores**: Danilo Pinto Nascimento, 
+Isabel Siqueira Almeida, 
+Raphael Mendes Miranda Fernandes, Sofia Garcia Nery Recreio e  Wesley Ribeiro Felix da Silva.
 - **Disciplina**: Projetos de Bancos de Dados - UFF (2025/2).
