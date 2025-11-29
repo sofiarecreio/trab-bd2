@@ -21,3 +21,14 @@ CREATE INDEX idx_doacao_canal_valida
 ON streaming.Doacao(id_canal) 
 WHERE status_doacao IN ('recebido', 'lido');
 
+-- ÍNDICE 4: Agregação de Doações por Vídeo (Consulta 4)
+-- Motivo: Embora a PK de Doacao comece com video_id, ela é gigante. 
+-- Este índice parcial é minúsculo (apenas doações lidas) e acelera muito a Q4. e a view
+CREATE INDEX idx_doacao_video_lido 
+ON streaming.Doacao(video_id, id_canal) 
+WHERE status_doacao = 'lido';
+
+-- *** ÍNDICE 5: 
+-- Motivo: Permite REFRESH CONCURRENTLY. Sem ele, atualizar o ranking trava o site.
+CREATE UNIQUE INDEX idx_mv_faturamento_unique 
+ON streaming.mv_faturamento_geral(id_canal);

@@ -32,10 +32,6 @@ LEFT JOIN pat ON pat.id_canal = c.id
 LEFT JOIN mem ON mem.id_canal = c.id
 LEFT JOIN doac ON doac.id_canal = c.id;
 
--- *** ÍNDICE 5: ÚNICO NA MV (O Pulo do Gato) ***
--- Motivo: Permite REFRESH CONCURRENTLY. Sem ele, atualizar o ranking trava o site.
-CREATE UNIQUE INDEX idx_mv_faturamento_unique 
-ON streaming.mv_faturamento_geral(id_canal);
 
 -- VIEW VIRTUAL 2: Doações por Vídeo (Consulta 4)
 -- Motivo: Leve o suficiente para ser virtual graças ao Índice 4.
