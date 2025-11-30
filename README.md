@@ -99,19 +99,9 @@ Para instanciar o banco de dados completo, execute os diretórios na seguinte or
 
 1. **Criação do Schema:** `estrutura_banco/`  
 2. **Regras de Consistência:** `triggers/`  
-3. **Otimização:** `views/` e `indices/`   
+3. **Otimização:** `views/` e depois `indices/`   
 4. **Carga de Dados:** `transactions/`  
 5. **Testes:** `consultas/`  
-
-
-
-
-## ▶️ Exemplo de Execução (Stored Procedure)
-
-```sql
--- Listar Top 3 canais com maior faturamento geral
-SELECT * FROM fn_top_k_faturamento_total(3);
-```
 
 ## 📧 Contato
 - **Autores**: Danilo Pinto Nascimento, 
